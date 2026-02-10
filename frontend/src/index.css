@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modernizing your color palette */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #10b981;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-900 antialiased;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+@layer components {
+  /* Premium Glass Effect for Cards */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl shadow-slate-200/50 rounded-2xl;
+  }
+
+  /* Sophisticated Button Style */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl 
+           transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg 
+           active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-slate-200 hover:border-primary hover:text-primary font-semibold 
+           py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  /* Subtle background blobs for visual interest without distraction */
+  .bg-blob {
+    @apply absolute -z-10 rounded-full blur-3xl opacity-20 animate-pulse;
+  }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+@theme {
+  --animate-scan: scan 3s ease-in-out infinite;
+
+  @keyframes scan {
+    0%, 100% { top: 0%; opacity: 0; }
+    5%, 95% { opacity: 1; }
+    50% { top: 100%; }
+  }
+}
+
+
+@import "tailwindcss";
+
+@theme {
+  /* Enhanced color palette with more depth */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #10b981;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Premium Glass Effect for Cards */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl shadow-slate-200/50 rounded-2xl;
+  }
+
+  /* Sophisticated Button Style */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl 
+           transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg 
+           active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-slate-200 hover:border-primary hover:text-primary font-semibold 
+           py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  /* Subtle background blobs for visual interest */
+  .bg-blob {
+    @apply absolute -z-10 rounded-full blur-3xl opacity-20 animate-pulse;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Animation classes */
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slideInFromLeft {
+    animation: slideInFromLeft 0.7s ease-out;
+  }
+
+  .animate-slideInFromRight {
+    animation: slideInFromRight 0.7s ease-out;
+  }
+
+  .animate-slideInFromBottom {
+    animation: slideInFromBottom 0.7s ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  /* Animation delay utilities */
+  .animate-in {
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .slide-in-from-left {
+    animation: slideInFromLeft 0.7s ease-out;
+  }
+
+  .slide-in-from-right {
+    animation: slideInFromRight 0.7s ease-out;
+  }
+
+  .slide-in-from-bottom-4 {
+    animation: slideInFromBottom 0.7s ease-out;
+  }
+
+  .slide-in-from-bottom-8 {
+    animation: slideInFromBottom 0.9s ease-out;
+  }
+
+  .duration-700 {
+    animation-duration: 0.7s;
+  }
+
+  .duration-1000 {
+    animation-duration: 1s;
+  }
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-400 to-blue-600 rounded-full hover:from-blue-500 hover:to-blue-700 transition-colors;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #f1f5f9;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-blue-200 text-blue-900;
+}
+
+::-moz-selection {
+  @apply bg-blue-200 text-blue-900;
+}
+
+/* Focus visible styling for accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Disable focus ring for mouse users */
+*:focus:not(:focus-visible) {
+  @apply outline-none ring-0;
+}
+
+/* Image loading animation */
+img {
+  @apply transition-opacity duration-300;
+}
+
+img[loading="lazy"] {
+  @apply opacity-0;
+}
+
+img[loading="lazy"].loaded {
+  @apply opacity-100;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+input,
+textarea,
+select {
+  @apply transition-all duration-200;
+}
+
+/* Toast notification custom styling */
+.Toaster {
+  z-index: 9999 !important;
+}
+
+/* Custom border width utilities */
+.border-3 {
+  border-width: 3px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500;
+}
+
+/* Card hover lift effect */
+.card-lift {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+}
+
+/* Button pulse effect */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Loading spinner */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Backdrop blur utilities */
+.backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+}
