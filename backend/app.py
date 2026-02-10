@@ -47,17 +47,17 @@ IMG_SIZE = 300
 CONFIDENCE_THRESHOLD = 0.50
 
 
-# -----------------------------
+
 # HEALTH CHECK
-# -----------------------------
+
 @app.route("/")
 def home():
     return "✅ Backend is running and model loaded successfully"
 
 
-# -----------------------------
+
 # IMAGE PREPROCESSING
-# -----------------------------
+
 def prepare_image(image: Image.Image):
     image = image.resize((IMG_SIZE, IMG_SIZE))
     img_array = np.array(image)
