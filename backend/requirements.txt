@@ -5,3 +5,4 @@ pillow
 flask-cors
 requests
 python-dotenv
+gunicorn
