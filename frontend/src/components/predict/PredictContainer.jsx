@@ -66,13 +66,16 @@ export default function PredictContainer() {
     const toastId = toast.loading("Finding nearby clinics...");
     try {
       const location = await getUserLocation();
+
       const res = await fetch(
-        `http://127.0.0.1:5000/api/nearby-clinics?lat=${location.lat}&lng=${location.lng}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/nearby-clinics?lat=${location.lat}&lng=${location.lng}`,
       );
+
       const data = await res.json();
       setClinics(data);
+
       toast.success("Clinics found", { id: toastId });
-    } catch {
+    } catch (error) {
       toast.error("Unable to fetch clinics", { id: toastId });
     }
   };
@@ -89,7 +92,10 @@ export default function PredictContainer() {
           </span>
         </div>
         <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
-          Skin Disease <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">Prediction</span>
+          Skin Disease{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+            Prediction
+          </span>
         </h2>
         <p className="text-slate-500 text-sm md:text-base mt-3 max-w-2xl font-medium leading-relaxed">
           Upload a clinical skin image for AI-assisted analysis. Deep learning
